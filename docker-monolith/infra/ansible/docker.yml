@@ -1,0 +1,15 @@
+---
+- name: Install Docker
+  tasks:
+   - name: "Install packages"
+     become: true
+     apt:
+       name: ['docker.io', 'docker-compose']
+       update_cache: yes
+   - name: "Restart docker"
+     become: true
+     systemd:
+       state: restarted
+       daemon_reload: yes
+       name: docker
+       enabled: yes

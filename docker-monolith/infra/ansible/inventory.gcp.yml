@@ -1,0 +1,4 @@
+projects:
+  - docker-276419
+auth_kind: serviceaccount
+service_account_file: /home/pavel/key1.json
