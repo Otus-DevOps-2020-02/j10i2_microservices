@@ -18,7 +18,7 @@ services:
     build: ./ui
     image: ${USERNAME}/ui:${UI_VERSION}
     ports:
-      - ${HOST_PORT}:${NEW_PORT}/tcp
+      - ${PORT}:${PORT}/tcp
     networks:
       - front_net
 
