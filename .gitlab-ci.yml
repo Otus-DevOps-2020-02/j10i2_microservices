@@ -14,13 +14,13 @@ before_script:
   - bundle install
 
 build_job:
-  #image: docker:19.03.1
-  #services:
-  # - docker:stable-dind
+  image: docker:19.03.1
+  services:
+   - docker:stable-dind
   stage: build
   script:
     - echo 'Building'
-    - sudo docker login -u $DOCK_LOGIN -p $DOCK_PASS
+    - docker login -u $DOCK_LOGIN -p $DOCK_PASS
 test_unit_job:
   stage: test
   services:
