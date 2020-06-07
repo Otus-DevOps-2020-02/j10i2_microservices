@@ -9,6 +9,9 @@ stages:
 variables:
  DATABASE_URL: 'mongodb://mongo/user_posts'
 
+services:
+   - docker:stable-dind
+
 before_script:
   - cd reddit
   - bundle install
@@ -17,8 +20,7 @@ build_job:
   stage: build
   script:
     - echo 'Building'
-    - docker build
-
+    - docker login -u $DOCK_LOGIN -p $DOCK_PASS
 test_unit_job:
   stage: test
   services:
