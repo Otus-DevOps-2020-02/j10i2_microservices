@@ -19,8 +19,6 @@ build_job:
   stage: build
   script:
     - echo 'Building'
-    - docker login -u $DOCK_LOGIN -p $DOCK_PASS
-    - dokcer run -t j10i2/reddit
 test_unit_job:
   stage: test
   services:
