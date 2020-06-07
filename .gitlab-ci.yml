@@ -15,9 +15,9 @@ before_script:
 
 
 build_job:
-  image: docker
-  services:
-    - docker:stable-dind
+  #image: docker
+  #services:
+  #  - docker:stable-dind
 
   stage: build
   script:
