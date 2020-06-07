@@ -14,11 +14,15 @@ before_script:
   - bundle install
 
 build_job:
-
+  image: docker:stable-dind
+  before_script:
+    - echo $DOCK_PASSWORD | docker login -u $DOCK_LOGIN --password-stdin
 
   stage: build
   script:
     - echo 'Building'
+    - docker build -t $DOCK_LOGIN/reddit
+    - docker push $DOCK_LOGIN/reddit
 test_unit_job:
   stage: test
   services:
@@ -35,6 +39,8 @@ deploy_dev_job:
   stage: review
   script:
     - echo 'Deploy'
+    - echo $DOCK_PASSWORD | docker login -u $DOCK_LOGIN --password-stdin
+    - docker run $DOCK_LOGIN/reddit -p 9292:9292
   environment:
     name: dev
     url: http://dev.example.com
