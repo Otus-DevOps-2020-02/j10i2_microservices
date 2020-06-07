@@ -15,7 +15,7 @@ before_script:
 
 
 build_job:
-  image: Ubuntu:16.04
+  image: gitlab/dind
   services:
     - ruby:2.4.2
     - docker:stable-dind
