@@ -16,7 +16,7 @@ before_script:
 build_job:
   #image: docker:19.03.1
   #services:
-    - docker:stable-dind
+  # - docker:stable-dind
   stage: build
   script:
     - echo 'Building'
