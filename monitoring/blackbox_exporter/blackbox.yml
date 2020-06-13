@@ -2,6 +2,7 @@ modules:
   tcp_connect:
     prober: tcp
     timeout: 5s
+
   http_2xx_check:
     prober: http
     timeout: 5s

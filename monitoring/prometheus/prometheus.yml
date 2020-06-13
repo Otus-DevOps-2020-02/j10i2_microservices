@@ -31,9 +31,9 @@ scrape_configs:
   - job_name: 'blackbox'
     metrics_path: /probe
     params:
-      module: [http_2xx_check]
+      module: http_2xx_check
     static_configs:
       - targets:
-          - http://comment:9292/metrics
-          - http://ui:9292/metrics
-          - http://post-py:5000/metrics
+          - http://35.205.143.142:9292/metrics
+          - http://35.205.143.142:9292/metrics
+          - http://35.205.143.142:5000/metrics
