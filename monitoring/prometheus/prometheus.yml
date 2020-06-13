@@ -28,12 +28,11 @@ scrape_configs:
       - targets:
         - 'mongodb_exporter:9216'
 
-  - job_name: 'blackbox'
-    metrics_path: /probe
-    params:
-      module: http_2xx_check
-    static_configs:
-      - targets:
-          - http://35.205.143.142:9292/metrics
-          - http://35.205.143.142:9292/metrics
-          - http://35.205.143.142:5000/metrics
+  #- job_name: 'blackbox'
+  #  metrics_path: /probe
+  #   params:
+  #    module: http_2xx_check
+  #  static_configs:
+  #    - targets:
+  #        - http://comment:9292/metrics
+  #        - http://ui:9292/metrics
