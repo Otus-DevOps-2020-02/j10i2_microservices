@@ -38,3 +38,5 @@ j10i2 microservices repository
 ## PR checklist
  - [ ] Выставил label с номером домашнего задания
  - [ ] Выставил label с темой домашнего задания
+
+ Ссылка на образы докерхаб - https://hub.docker.com/u/j10i2
