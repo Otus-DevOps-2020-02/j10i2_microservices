@@ -74,7 +74,7 @@ services:
       - backnet
 
   blackbox-exporter:
-    image: ${USER_NAME}/blackbox_exporter
+    image: ${USERNAME}/blackbox_exporter
     networks:
       - front_net
 
