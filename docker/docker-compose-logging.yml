@@ -1,6 +1,7 @@
 version: '3'
 services:
   fluentd:
+    env_file: .env
     image: ${USERNAME}/fluentd
     environment:
       - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
@@ -13,6 +14,7 @@ services:
       - backnet
 
   elasticsearch:
+    env_file: .env
     image: elasticsearch:7.4.0
     environment:
       # single-node mode for testing and development
@@ -28,6 +30,7 @@ services:
       - backnet
 
   kibana:
+    env_file: .env
     image: kibana:7.4.0
     environment:
       - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
@@ -39,6 +42,7 @@ services:
 
 
   zipkin:
+    env_file: .env
     image: openzipkin/zipkin
     environment:
       - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
