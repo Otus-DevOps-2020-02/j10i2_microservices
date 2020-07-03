@@ -18,7 +18,7 @@ resource "google_container_cluster" "k8s" {
   # separately managed node pools. So we create the smallest possible default
   # node pool and immediately delete it.
   remove_default_node_pool = true
-  initial_node_count       = 2
+  initial_node_count       = 1
 
   master_auth {
     username = ""
