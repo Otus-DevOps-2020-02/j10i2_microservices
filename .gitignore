@@ -19,3 +19,4 @@ vault.key
 .env
 tls.crt
 tls.key
+Gitlab_ci
